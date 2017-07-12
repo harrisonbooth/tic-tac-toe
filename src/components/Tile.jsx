@@ -6,8 +6,7 @@ export const Tile = (props) => {
   }
 
   return (
-    <div className="tile" onClick={onTileClick}>
-      <p>{props.symbol}</p>
+    <div className={`tile ${props.symbol}`} onClick={onTileClick}>
     </div>
   )
 }
