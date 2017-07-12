@@ -4,16 +4,14 @@
   "description": "Tic Tac Toe in React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack -w",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harrisonbooth/tic-tac-toe.git"
+    "url": "https://github.com/harrisonbooth/tic-tac-toe.git"
   },
   "author": "Harrison Booth",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/harrisonbooth/tic-tac-toe/issues"
-  },
-  "homepage": "https://github.com/harrisonbooth/tic-tac-toe#readme"
 }
