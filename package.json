@@ -1,0 +1,19 @@
+{
+  "name": "tic_tac_toe",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe in React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrisonbooth/tic-tac-toe.git"
+  },
+  "author": "Harrison Booth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harrisonbooth/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/harrisonbooth/tic-tac-toe#readme"
+}
