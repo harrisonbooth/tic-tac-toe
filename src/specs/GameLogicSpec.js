@@ -1,5 +1,9 @@
 var assert = require("assert")
 
+var changeTile = (gameObject, tileIndex, newSymbol) => {
+  gameObject.board[tileIndex] = newSymbol
+}
+
 var checkWin = function (gameObject) {
   var board = gameObject.board
   var winConditions = [
@@ -40,6 +44,13 @@ describe("Game logic functions", function() {
 
   it("should evaluate winning boards as true", function() {
     assert.equal(checkWin({board: winningBoard}), true)
+  })
+
+  it("should be able to change tiles", function() {
+    var gameObject = {board: [null, null]}
+    changeTile(gameObject, 0, "X")
+    assert.equal(gameObject.board[0], "X")
+    assert.equal(gameObject.board[1], null)
   })
 })
 

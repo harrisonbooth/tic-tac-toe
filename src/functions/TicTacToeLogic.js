@@ -37,3 +37,7 @@ export const checkWin = (gameObject) => {
 
   return winningBoard
 }
+
+export const changeTile = (gameObject, tileIndex, newSymbol) => {
+  gameObject.board[tileIndex] = newSymbol
+}
