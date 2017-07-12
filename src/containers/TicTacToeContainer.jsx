@@ -1,15 +1,15 @@
 import React from "react"
-
 import {gameObject, checkWin, changeTile} from "../functions/TicTacToeLogic.js"
 import { Board } from "../components/Board.jsx"
+import { WinDisplay } from "../components/WinDisplay.jsx"
 
 export default class TicTacToeContainer extends React.Component {
   constructor () {
     super()
-
     this.state = {
       gameObject: gameObject(),
-      playerTurn: "X"
+      playerTurn: "X",
+      winner: null
     }
   }
   
@@ -18,7 +18,10 @@ export default class TicTacToeContainer extends React.Component {
     changeTile(gameObject, tileIndex, this.state.playerTurn)
     this.setState({ gameObject })
 
-    if(checkWin(this.state.gameObject)) this.onWinGame()
+    if(checkWin(this.state.gameObject)) {
+      this.onWinGame()
+      return
+    }
     this.changePlayer()
   }
 
@@ -28,15 +31,17 @@ export default class TicTacToeContainer extends React.Component {
   }
 
   onWinGame () {
-    console.log("X wins")
+    this.setState({ winner: this.state.playerTurn })
   }
 
   render () {
     return (
-      <Board 
-      onTileClick={this.changeTile.bind(this)} 
-      board={this.state.gameObject.board} 
-      />
+      <div>
+      <Board onTileClick={this.changeTile.bind(this)} 
+      board={this.state.gameObject.board} />
+      
+      <WinDisplay winner={this.state.winner} />
+      </div>
     )
   }
 }
