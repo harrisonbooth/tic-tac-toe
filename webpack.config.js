@@ -12,7 +12,10 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules)(specs)/,
+        exclude: [
+        /(node_modules)/,
+        /(specs)/
+        ],
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015']
