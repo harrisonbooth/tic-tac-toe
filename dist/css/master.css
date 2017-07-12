@@ -1,0 +1,11 @@
+#game-board {
+  width: 600px;
+}
+
+.tile {
+  width: 33%;
+  height: 200px;
+  background-color: tomato;
+  border: 1px solid black;
+  display: inline-block;
+}
