@@ -39,5 +39,6 @@ export const checkWin = (gameObject) => {
 }
 
 export const changeTile = (gameObject, tileIndex, newSymbol) => {
+  if(gameObject.board[tileIndex] !== null) return
   gameObject.board[tileIndex] = newSymbol
 }
