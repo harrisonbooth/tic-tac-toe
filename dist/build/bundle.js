@@ -22477,6 +22477,15 @@ var TicTacToeContainer = function (_React$Component) {
       this.setState({ winner: this.state.playerTurn });
     }
   }, {
+    key: "resetGame",
+    value: function resetGame() {
+      this.setState({
+        gameObject: (0, _TicTacToeLogic.gameObject)(),
+        playerTurn: "X",
+        winner: null
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -22484,7 +22493,7 @@ var TicTacToeContainer = function (_React$Component) {
         null,
         _react2.default.createElement(_Board.Board, { onTileClick: this.changeTile.bind(this),
           board: this.state.gameObject.board }),
-        _react2.default.createElement(_WinDisplay.WinDisplay, { winner: this.state.winner })
+        _react2.default.createElement(_WinDisplay.WinDisplay, { onResetClick: this.resetGame.bind(this), winner: this.state.winner })
       );
     }
   }]);
@@ -22632,6 +22641,11 @@ var WinDisplay = exports.WinDisplay = function WinDisplay(props) {
       null,
       props.winner,
       " wins!"
+    ),
+    _react2.default.createElement(
+      "button",
+      { onClick: props.onResetClick, id: "reset-button" },
+      "Play again!"
     )
   );
 };

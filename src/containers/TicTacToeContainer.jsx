@@ -34,13 +34,21 @@ export default class TicTacToeContainer extends React.Component {
     this.setState({ winner: this.state.playerTurn })
   }
 
+  resetGame () {
+    this.setState({
+      gameObject: gameObject(),
+      playerTurn: "X",
+      winner: null
+    })
+  }
+
   render () {
     return (
       <div>
       <Board onTileClick={this.changeTile.bind(this)} 
       board={this.state.gameObject.board} />
       
-      <WinDisplay winner={this.state.winner} />
+      <WinDisplay onResetClick={this.resetGame.bind(this)} winner={this.state.winner} />
       </div>
     )
   }
