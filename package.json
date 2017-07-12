@@ -4,7 +4,7 @@
   "description": "Tic Tac Toe in React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha src/specs",
     "watch": "webpack -w",
     "build": "webpack"
   },
