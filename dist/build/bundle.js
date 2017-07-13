@@ -22610,7 +22610,7 @@ var Tile = exports.Tile = function Tile(props) {
   };
 
   return _react2.default.createElement('div', { className: 'tile ' + props.symbol, onClick: onTileClick });
-};
+};;
 
 /***/ }),
 /* 188 */
